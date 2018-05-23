@@ -1,5 +1,6 @@
 package com.ayuhani.coolweather;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -230,5 +231,8 @@ public class WeatherActivity extends AppCompatActivity {
         tvSport.setText(sport);
 
         weatherLayout.setVisibility(View.VISIBLE);
+
+        Intent it = new Intent(this, AutoUpdateService.class);
+        startService(it);
     }
 }
